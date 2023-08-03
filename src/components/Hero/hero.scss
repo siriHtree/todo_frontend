@@ -1,0 +1,24 @@
+#hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+
+    #htxt {
+        margin-top: 10vmin;
+
+        h1 {
+            text-align: center;
+            font-size: 5em;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 1em;
+            line-height: 1.2em;
+        }
+    }
+}
