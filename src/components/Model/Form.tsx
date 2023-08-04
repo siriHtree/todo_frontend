@@ -6,6 +6,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import "./form.scss";
 
+import { addTaskCall } from "../../api/services";
 const style = {
 	position: "absolute" as "absolute",
 	top: "50%",
@@ -25,6 +26,10 @@ const Form = (props: any) => {
 	const handleClose = () => props.setOpen(false);
 	const submitionHandler = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		console.log(formData);
+		addTaskCall(formData);
+		props.setApiCall(!props.apiCall);
+		handleClose();
 	};
 	const getData = (
 		e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -45,6 +50,7 @@ const Form = (props: any) => {
 							onChange={getData}
 							value={formData.taskName}
 							margin="normal"
+							required
 						/>
 						<TextField
 							label="Task Description"
@@ -55,6 +61,7 @@ const Form = (props: any) => {
 							multiline
 							maxRows={4}
 							margin="normal"
+							required
 						/>
 						<Button variant="contained" type="submit">
 							Submit

@@ -1,12 +1,24 @@
+import { useState, useEffect } from "react";
 import TaskCard from "./TaskCard";
 import "./task.scss";
-
-const TaskContainer = () => {
+import { getTasks } from "../../api/services";
+import CircularProgress from "@mui/material/CircularProgress";
+const TaskContainer = (props: any) => {
+	let [loading, setLoading] = useState(false);
+	let [tasks, setTasks] = useState([]);
+	let [error, setError] = useState("");
+	useEffect(() => {
+		getTasks(setLoading, setTasks, setError);
+	}, [props.apiCall]);
 	return (
 		<div id="taskContainer">
-			{[1, 2, 3, 4, 5].map((elm) => (
-				<TaskCard />
-			))}
+			{loading ? (
+				<CircularProgress />
+			) : (
+				tasks.map((elm) => {
+					return <TaskCard data={elm} key={elm["_id"]} />;
+				})
+			)}
 		</div>
 	);
 };

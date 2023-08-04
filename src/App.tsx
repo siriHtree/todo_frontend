@@ -1,15 +1,16 @@
-import React from 'react'
+import { useState } from "react";
 import "./style.scss";
 import Header from "./components/Hearder/Header";
 import Hero from "./components/Hero/Hero";
 
 const App = () => {
-  return (
+	const [apiCall, setApiCall] = useState(false);
+	return (
 		<main>
-			<Header />
-			<Hero></Hero>
+			<Header ApiCall={setApiCall} apiCall={apiCall} />
+			<Hero ApiCall={setApiCall} apiCall={apiCall}></Hero>
 		</main>
-  );
-}
+	);
+};
 
-export default App
+export default App;

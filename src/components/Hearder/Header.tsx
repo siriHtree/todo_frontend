@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./header.scss";
 import Form from "../Model/Form";
 
-const Header = () => {
+const Header = (props: any) => {
 	const [open, setOpen] = useState(false);
 
 	return (
@@ -13,7 +13,13 @@ const Header = () => {
 				</div>
 				<button onClick={() => setOpen(true)}>create task</button>
 			</nav>
-			<Form open={open} setOpen={setOpen} type={"Create"} />
+			<Form
+				open={open}
+				setOpen={setOpen}
+				type={"Create"}
+				setApiCall={props.ApiCall}
+				apiCall={props.apiCall}
+			/>
 		</>
 	);
 };
