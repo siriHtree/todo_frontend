@@ -9,6 +9,9 @@ const TaskContainer = (props: any) => {
 	let [error, setError] = useState("");
 	useEffect(() => {
 		getTasks(setLoading, setTasks, setError);
+		if (error) {
+			alert(error);
+		}
 	}, [props.apiCall]);
 	return (
 		<div id="taskContainer">

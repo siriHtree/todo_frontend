@@ -2,7 +2,7 @@ import * as api from "./axiosCall";
 import React from "react";
 export const addTaskCall = async (data: Object) => {
 	try {
-		let res = await api.addTask(data);
+		await api.addTask(data);
 	} catch (err) {
 		console.log(err);
 	}

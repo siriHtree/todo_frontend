@@ -22,7 +22,7 @@ const Form = (props: any) => {
 		taskName: "",
 		taskDescription: "",
 	});
-	const handleOpen = () => props.setOpen(true);
+	// const handleOpen = () => props.setOpen(true);
 	const handleClose = () => props.setOpen(false);
 	const submitionHandler = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
