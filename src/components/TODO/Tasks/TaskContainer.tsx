@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import TaskCard from "./TaskCard";
 import "./task.scss";
-import { getTasks } from "../../api/services";
+import { getTasks } from "../../../api/services";
 import CircularProgress from "@mui/material/CircularProgress";
 const TaskContainer = (props: any) => {
 	let [loading, setLoading] = useState(false);
